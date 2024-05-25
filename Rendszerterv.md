@@ -7,8 +7,25 @@ A rendszerben tárolni lehet a meglévő járművek különféle adatait és id�
 tudja a vásárló megtekinteni személyesen a kiválasztott járművet, a bejelentkezést követően. Ha az adott felhasználó nem rendelkezik fiókkal,
 bármikor regisztrálhat egyet de, ha csak a jármű kinálatot szeretné megtekinteni akkor azt bejelentkezés nélkül is megteheti. <br>
 
-## 2. Projectterv
+## 2. Projektterv
 
+Projektszerepkörök, felelőségek:
+Scrum Masters: Cégünk Vezető programozói
+Product Owner: Oláh Krisztián, Oláh Család
+Contributer: Dávid Buda
+Contributer: Kémeri Martin
+Projektmunkások és felelőségek:
+Frontend: Kémeri Martin
+Backend: Dávid Buda
+Tesztelés: Dávid Buda, Kémeri Martin
+
+|Funkció                  | Feladat                                | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
+|-------------------------|----------------------------------------|---------------|------------------------|------------------|---------------------|
+|Rendszerterv             |Megírás                                 |             1 |                      1 |                1 |                   1 |
+|Program                  |Adatbázisrendszer elkészítése           |             1 |                      1 |                1 |                   1 |
+|Program                  |Frontend elkészítése                    |             8 |                      8 |                8 |                   8 |
+|Program                  |Backend elkészítése                     |             8 |                      8 |                8 |                   8 |
+|Program                  |Tesztelés és hibajavítás                |             2 |                      2 |                2 |                   2 |
 
 ## 3. Követelmények
 
