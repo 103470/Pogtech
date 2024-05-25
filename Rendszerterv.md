@@ -108,6 +108,14 @@ A szerver és az adatbázist összekötő csomag felelős az adatbázis kezelés
 
 ## 10. Teszt terv
 
+Unit Test:
+Célja a Program fejlesztése során a lehetséges hibák megelőzése illetve javítása
+
+Beta Test: 
+Célja a kész Program tesztelése felhasználói szempontból, a felület Felhasználóbaráttá tétele illetve kisebb feltörekvő hibák javítása
+
+Tesztelendő funkciók:
+-Backend
 
 ## 11. Telepítési terv
 
@@ -129,3 +137,6 @@ A szerver és az adatbázist összekötő csomag felelős az adatbázis kezelés
 
 
 ## 12. Karbantartási terv
+
+-JavaFx Felület karbantartása
+-Adatbázisrendszer frissítése bizonyos időközönként
