@@ -37,6 +37,8 @@ Tesztelés: Dávid Buda, Kémeri Martin
 
 ## 4. Üzleti folyamatok modellje
 
+![Untitled Diagram drawio](https://github.com/103470/Pogtech/assets/114563545/9aeb7dac-5eda-42d8-8672-c4059b59e864)
+
 
 ## 5. Funkcionális terv
 
