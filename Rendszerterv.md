@@ -138,5 +138,5 @@ Tesztelendő funkciók:
 
 ## 12. Karbantartási terv
 
--JavaFx Felület karbantartása
--Adatbázisrendszer frissítése bizonyos időközönként
+-JavaFx Felület karbantartása <br>
+-Adatbázisrendszer frissítése bizonyos időközönként <br>
