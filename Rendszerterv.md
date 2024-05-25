@@ -69,6 +69,8 @@ Látogató:<br>
 
 ## 6. Fizikai környezet
 
+- Java FX <br>
+- Intelli J
 
 ## 7. Architektúrális terv
 
