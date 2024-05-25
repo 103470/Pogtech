@@ -9,15 +9,15 @@ bármikor regisztrálhat egyet de, ha csak a jármű kinálatot szeretné megtek
 
 ## 2. Projektterv
 
-Projektszerepkörök, felelőségek:
-Scrum Masters: Cégünk Vezető programozói
-Product Owner: Oláh Krisztián, Oláh Család
-Contributer: Dávid Buda
-Contributer: Kémeri Martin
-Projektmunkások és felelőségek:
-Frontend: Kémeri Martin
-Backend: Dávid Buda
-Tesztelés: Dávid Buda, Kémeri Martin
+Projektszerepkörök, felelőségek: <br>
+Scrum Masters: Cégünk Vezető programozói <br>
+Product Owner: Oláh Krisztián, Oláh Család <br>
+Contributer: Dávid Buda <br>
+Contributer: Kémeri Martin <br>
+Projektmunkások és felelőségek: <br>
+Frontend: Kémeri Martin <br>
+Backend: Dávid Buda <br>
+Tesztelés: Dávid Buda, Kémeri Martin <br>
 
 |Funkció                  | Feladat                                | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
 |-------------------------|----------------------------------------|---------------|------------------------|------------------|---------------------|
