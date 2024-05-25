@@ -69,8 +69,13 @@ Látogató:<br>
 
 ## 6. Fizikai környezet
 
-- Java FX <br>
+Eszközök, amiket a fejlesztéshez használunk:
+
+- Java FX
 - Intelli J
+- Xampp
+- Github
+- Trello
 
 ## 7. Architektúrális terv
 
