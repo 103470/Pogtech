@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.MainController">
+   <children>
+      <TableView fx:id="tableMain" layoutX="228.0" prefHeight="400.0" prefWidth="620.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="36.0" text="Id" />
+          <TableColumn fx:id="marka" prefWidth="87.0" text="Márka" />
+            <TableColumn fx:id="tipus" prefWidth="91.0" text="Típus" />
+            <TableColumn fx:id="evjarat" text="Évjárat" />
+            <TableColumn fx:id="kivitel" text="Kivitel" />
+            <TableColumn fx:id="extra" prefWidth="81.0" text="Extra" />
+            <TableColumn fx:id="ar" prefWidth="85.0" text="Ár" />
+            <TableColumn fx:id="idopont" prefWidth="79.0" text="Ídőpont(ok)" />
+        </columns>
+      </TableView>
+      <Label layoutX="38.0" layoutY="117.0" minWidth="-Infinity" prefHeight="57.0" prefWidth="147.0" text="Időpont fonglalásához, &#10;kérjük jelentkezzen be!" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Droid Serif Bold Italic" size="12.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="80.0" text="Üdvözli önt az &#10;Oláh Család Autókereskedés&#10;" textAlignment="CENTER">
+         <font>
+            <Font name="Droid Serif Bold Italic" size="12.0" />
+         </font></Label>
+      <Button fx:id="loginB" layoutX="66.0" layoutY="177.0" mnemonicParsing="false" text="Bejelentkezés">
+         <font>
+            <Font name="Droid Serif Italic" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="22.0" layoutY="230.0" text="Még nem rendelkezik fiókkal,&#10; regisztráljon egyet most!" textAlignment="CENTER">
+         <font>
+            <Font name="Droid Serif Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="registerB" layoutX="69.0" layoutY="278.0" mnemonicParsing="false" text="Regisztráció">
+         <font>
+            <Font name="Droid Serif Italic" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
