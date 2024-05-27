@@ -93,6 +93,10 @@ XAMPP, ami az installáció esetén egy szervergép
 JDBC (Java Database Connectivity) API az adatbázishoz való hozzáféréshez<br>
 
 ## 8. Adatbázis terv
+
+-USER ( ID, UserName, Password, email, Name, isAdmin)
+-CARS (id, brand, type, year, design, extra, price, rendezvous_date)
+
 ## 9. Implementációs terv
 
 A projektet két részre oszlik: a frontendre és a backendre. A frontend JavaFX segítségével készül, míg a backend Java keretrendszerben.
