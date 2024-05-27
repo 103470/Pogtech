@@ -3,18 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="524.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminMain">
+<AnchorPane prefHeight="524.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.AdminMainController">
    <children>
       <TableView layoutX="208.0" layoutY="-1.0" prefHeight="536.0" prefWidth="556.0">
         <columns>
-          <TableColumn prefWidth="49.0" text="Id" />
-          <TableColumn prefWidth="79.0" text="Márka" />
-            <TableColumn text="Típus" />
-            <TableColumn prefWidth="74.0" text="Évjárat" />
-            <TableColumn prefWidth="69.0" text="Kivitel" />
-            <TableColumn prefWidth="65.0" text="Extra" />
-            <TableColumn prefWidth="63.0" text="Ár" />
-            <TableColumn text="Időpont(ok)" />
+          <TableColumn fx:id="id" prefWidth="49.0" text="Id" />
+          <TableColumn fx:id="brand" prefWidth="79.0" text="Márka" />
+            <TableColumn fx:id="type" text="Típus" />
+            <TableColumn fx:id="year" prefWidth="74.0" text="Évjárat" />
+            <TableColumn fx:id="design" prefWidth="69.0" text="Kivitel" />
+            <TableColumn fx:id="extra" prefWidth="65.0" text="Extra" />
+            <TableColumn fx:id="price" prefWidth="63.0" text="Ár" />
+            <TableColumn fx:id="rendezvousDate" text="Időpont(ok)" />
         </columns>
       </TableView>
       <AnchorPane layoutY="-2.0" prefHeight="536.0" prefWidth="208.0">

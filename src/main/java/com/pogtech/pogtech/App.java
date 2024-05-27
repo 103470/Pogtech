@@ -1,5 +1,6 @@
 package com.pogtech.pogtech;
 
+import com.pogtech.pogtech.controllers.AdminMainController;
 import com.pogtech.pogtech.controllers.LoginController;
 import com.pogtech.pogtech.controllers.MainController;
 import javafx.application.Application;
@@ -50,6 +51,25 @@ public class App extends Application {
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = new Stage();
             stage.setTitle("Regisztráció");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void loadAdmin(){
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/adminMain.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            AdminMainController adminMainController = fxmlLoader.getController();
+            adminMainController.setApp(this);
+            adminMainController.initalize();
+
+            Stage stage = new Stage();
+            stage.setTitle("Admin panel");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
