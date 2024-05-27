@@ -9,13 +9,13 @@
       <TableView fx:id="tableMain" layoutX="228.0" prefHeight="531.0" prefWidth="689.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="36.0" text="Id" />
-          <TableColumn fx:id="marka" prefWidth="87.0" text="Márka" />
-            <TableColumn fx:id="tipus" prefWidth="91.0" text="Típus" />
-            <TableColumn fx:id="evjarat" text="Évjárat" />
-            <TableColumn fx:id="kivitel" text="Kivitel" />
+          <TableColumn fx:id="brand" prefWidth="87.0" text="Márka" />
+            <TableColumn fx:id="type" prefWidth="91.0" text="Típus" />
+            <TableColumn fx:id="year" text="Évjárat" />
+            <TableColumn fx:id="design" text="Kivitel" />
             <TableColumn fx:id="extra" prefWidth="81.0" text="Extra" />
-            <TableColumn fx:id="ar" prefWidth="85.0" text="Ár" />
-            <TableColumn fx:id="idopont" prefWidth="79.0" text="Ídőpont(ok)" />
+            <TableColumn fx:id="price" prefWidth="85.0" text="Ár" />
+            <TableColumn fx:id="rendezvousDate" prefWidth="79.0" text="Ídőpont(ok)" />
         </columns>
       </TableView>
       <Label layoutX="38.0" layoutY="117.0" minWidth="-Infinity" prefHeight="57.0" prefWidth="147.0" text="Időpont fonglalásához, &#10;kérjük jelentkezzen be!" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">

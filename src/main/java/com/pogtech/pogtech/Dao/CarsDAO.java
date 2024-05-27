@@ -12,9 +12,11 @@ public class CarsDAO {
 
     private static final String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
 
-    public List<Cars> getAllBooks() throws DatabaseException {
+    public List<Cars> getAllCars() throws DatabaseException {
         List<Cars> cars = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:db.sqlite3");
+        String username = "root";
+        String password = "";
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dealership");
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CARS_QUERY);
              ResultSet resultSet = preparedStatement.executeQuery()) {
 

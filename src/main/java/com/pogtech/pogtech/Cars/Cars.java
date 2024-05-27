@@ -8,10 +8,10 @@ public class Cars {
     private int year;
     private String design;
     private String extra;
-    private double price;
+    private int price;
     private LocalDate rendezvousDate;
 
-    public Cars(int id, String brand, String type, int year, String design, String extra, double price, LocalDate rendezvousDate) {
+    public Cars(int id, String brand, String type, int year, String design, String extra, int price, LocalDate rendezvousDate) {
         this.id = id;
         this.brand = brand;
         this.type = type;
@@ -71,11 +71,11 @@ public class Cars {
         this.extra = extra;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

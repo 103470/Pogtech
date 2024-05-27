@@ -1,5 +1,7 @@
 package com.pogtech.pogtech;
 
+import com.pogtech.pogtech.controllers.LoginController;
+import com.pogtech.pogtech.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +15,9 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        MainController mainController = fxmlLoader.getController();
+        mainController.setApp(this);
+        mainController.initalize();
 
         Stage stage = new Stage();
         stage.setTitle("Autókereskedés");
@@ -21,11 +26,13 @@ public class App extends Application {
 
     }
 
-    public static void loadLogin()  {
+    public void loadLogin()  {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/login.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            LoginController loginController = fxmlLoader.getController();
+            loginController.setApp(this);
             Stage stage = new Stage();
             stage.setTitle("Bejelentkezés");
             stage.setScene(scene);
