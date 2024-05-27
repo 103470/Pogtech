@@ -2,6 +2,7 @@ package com.pogtech.pogtech.controllers;
 
 import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.MessageHandler;
+import com.pogtech.pogtech.database.DatabaseException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -70,15 +71,20 @@ public class RegisterController {
                 userDAO.registerUser(newUser);
 
                 System.out.println("Felhasználó regisztrálva: " + username);
-                mainApplication.loadLoginScene();
+                app.loadLogin();
             } catch (DatabaseException e) {
                 displayErrorDialog("Hiba a regisztráció közben: " + e.getMessage());
             }
         });
 
-        loginLink.setOnAction(event -> {
-            mainApplication.loadLoginScene();
+        goToLogin.setOnAction(event -> {
+            App.loadLogin();
         });
+    }
+
+    private boolean isValidEmail(String email) {
+        String regex = "^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\\.[a-zA-Z]{2,3}$";
+        return email.matches(regex);
     }
 
     private void displayErrorDialog(String message) {

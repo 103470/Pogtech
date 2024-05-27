@@ -27,13 +27,11 @@ public class App extends Application {
 
     }
 
-    public void loadLogin()  {
+    public static void loadLogin()  {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/login.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            LoginController loginController = fxmlLoader.getController();
-            loginController.setApp(this);
             Stage stage = new Stage();
             stage.setTitle("Bejelentkezés");
             stage.setScene(scene);
