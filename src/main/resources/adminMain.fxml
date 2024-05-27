@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdminMain">
+   <children>
+      <TableView layoutX="208.0" layoutY="-1.0" prefHeight="536.0" prefWidth="556.0">
+        <columns>
+          <TableColumn prefWidth="49.0" text="Id" />
+          <TableColumn prefWidth="79.0" text="Márka" />
+            <TableColumn text="Típus" />
+            <TableColumn prefWidth="74.0" text="Évjárat" />
+            <TableColumn prefWidth="69.0" text="Kivitel" />
+            <TableColumn prefWidth="65.0" text="Extra" />
+            <TableColumn prefWidth="63.0" text="Ár" />
+            <TableColumn text="Időpont(ok)" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutY="-2.0" prefHeight="536.0" prefWidth="208.0">
+         <children>
+            <Button layoutX="38.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű hozzáadás" />
+            <Button layoutX="38.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű szerkesztése" />
+            <Button layoutX="38.0" layoutY="182.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű törlése" />
+            <Button layoutX="38.0" layoutY="476.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Kijelentkezés" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

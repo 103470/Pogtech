@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.MainController">
+<AnchorPane prefHeight="531.0" prefWidth="916.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.MainController">
    <children>
-      <TableView fx:id="tableMain" layoutX="228.0" prefHeight="400.0" prefWidth="620.0">
+      <TableView fx:id="tableMain" layoutX="228.0" prefHeight="531.0" prefWidth="689.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="36.0" text="Id" />
           <TableColumn fx:id="marka" prefWidth="87.0" text="Márka" />
