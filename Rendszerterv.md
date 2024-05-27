@@ -94,8 +94,9 @@ JDBC (Java Database Connectivity) API az adatbázishoz való hozzáféréshez<br
 
 ## 8. Adatbázis terv
 
--USER ( ID, UserName, Password, email, Name, isAdmin)
+-USER ( id, userName, password, email, name, isAdmin)
 -CARS (id, brand, type, year, design, extra, price, rendezvous_date)
+-EXTRA (id, type)
 
 ## 9. Implementációs terv
 
