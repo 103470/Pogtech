@@ -8,9 +8,9 @@ public class Users {
     private String password;
     private String email;
     private String name;
-    private boolean isAdmin;
+    private int isAdmin;
 
-    public Users(int id, String username, String password, String email, String name, boolean isAdmin) {
+    public Users(int id, String username, String password, String email, String name, int isAdmin) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -59,11 +59,9 @@ public class Users {
         this.name = name;
     }
 
-    public boolean isAdmin() {
+    public int isAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
+    public void setAdmin(int admin) { isAdmin = admin;}
 }

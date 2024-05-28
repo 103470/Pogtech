@@ -1,7 +1,9 @@
 package com.pogtech.pogtech.controllers;
 
 import com.pogtech.pogtech.App;
+import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.MessageHandler;
+import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -35,11 +37,13 @@ public class RegisterController {
 
     public void initialize() {
         registerButton.setOnAction(event -> {
+            int id = 1;
             String name = nameText.getText();
             String username = usernameText.getText();
             String email = emailText.getText();
             String password = passwordText.getText();
             String passwordAgain = cpasswordText.getText();
+            int isAdmin = 0;
 
             if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()) {
                 displayErrorDialog("Kérjük töltse ki az összes mezőt!");
@@ -57,18 +61,18 @@ public class RegisterController {
             }
 
             if (!password.equals(passwordAgain)) {
-                displayErrorDialog("A két jelszó nem egyezik!");
+                displayErrorDialog("A jelszavak nem egyeznek");
                 return;
             }
 
             try {
-                if (userDAO.isUsernameTaken(username)) {
-                    displayErrorDialog("Ezzel a felhasználónévvel már regisztráltak.");
+                if (UserDAO.isUsernameTaken(username)) {
+                    displayErrorDialog("A felhasználónév foglalt");
                     return;
                 }
 
-                User newUser = new User(name, username, email, password);
-                userDAO.registerUser(newUser);
+                Users newUser = new Users(id, name, username, email, password, isAdmin);
+                UserDAO.registerUser(newUser);
 
                 System.out.println("Felhasználó regisztrálva: " + username);
                 app.loadLogin();
