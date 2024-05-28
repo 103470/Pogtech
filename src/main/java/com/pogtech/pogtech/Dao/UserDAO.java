@@ -1,7 +1,10 @@
 package com.pogtech.pogtech.Dao;
 
+import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
+import javafx.scene.chart.PieChart;
+import javafx.fxml.FXML;
 
 import java.sql.*;
 
@@ -10,6 +13,7 @@ import java.sql.*;
 public class UserDAO {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/dealership";
     private static final String INSERT_INTO_USERS = "INSERT INTO users (id, username, password, email, name, isAdmin) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String SELECT_FROM_USERS = "SELECT count(1) FROM users WHERE username = ? AND password = ?";
 
     public static boolean isUsernameTaken(String username) throws DatabaseException {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";
@@ -31,7 +35,6 @@ public class UserDAO {
 
     public static void registerUser(Users user) throws DatabaseException {
         try (Connection conn = DriverManager.getConnection(DB_URL)) {
-            String query = INSERT_INTO_USERS;
             PreparedStatement stmt = conn.prepareStatement(INSERT_INTO_USERS);
             stmt.setInt(1,user.getId());
             stmt.setString(2, user.getUsername());
@@ -42,6 +45,24 @@ public class UserDAO {
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new DatabaseException("Hiba a felhasználó regisztrálásakor: " + e.getMessage());
+        }
+    }
+
+    public static boolean loginUser(String usernameText, String passwordText) throws DatabaseException {
+        try (Connection conn = DriverManager.getConnection(DB_URL)){
+            PreparedStatement stmt = conn.prepareStatement(SELECT_FROM_USERS);
+            stmt.setString(1, usernameText);
+            stmt.setString(2, passwordText);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1) > 0;
+                } else {
+                    return false;
+                }
+            }
+
+        }catch (SQLException e){
+            throw new DatabaseException("nemjó");
         }
     }
 }
