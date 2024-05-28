@@ -1,4 +1,4 @@
-package com.pogtech.pogtech.Cars;
+package com.pogtech.pogtech.data;
 import java.time.LocalDate;
 
 public class Cars {

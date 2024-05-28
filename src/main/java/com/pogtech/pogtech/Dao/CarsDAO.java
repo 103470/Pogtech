@@ -1,7 +1,7 @@
 package com.pogtech.pogtech.Dao;
 
 
-import com.pogtech.pogtech.Cars.Cars;
+import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.database.DatabaseException;
 
 import java.sql.*;
