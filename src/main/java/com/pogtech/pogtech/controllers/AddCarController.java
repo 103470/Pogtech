@@ -9,54 +9,46 @@ import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.time.LocalDate;
 import java.util.Date;
 
 public class AddCarController {
 
-    private App app;
-    public void setApp(App app) {
-        this.app = app;
-    }
 
     @FXML
     private TextField brandText;
     @FXML
     private TextField typeText;
     @FXML
-    private TextField yearText;
+    private Spinner yearText;
     @FXML
     private TextField designText;
     @FXML
-    private ChoiceBox extraChoice;
+    private TextField extraText;
     @FXML
-    private TextField arText;
+    private Spinner arText;
     @FXML
-    private TextField dateText;
+    private DatePicker dateText;
     @FXML
     private Button saveB;
 
 
 
     public void initialize() {
-        int id = generateUniqueId();
-       String brand = brandText.getText();
-       String type = typeText.getText();
-       int year = Integer.parseInt(yearText.getText());
-       String design = designText.getText();
-       String extra = extraChoice.getValue().toString();
-       int ar = Integer.parseInt(arText.getText());
-       LocalDate date = LocalDate.parse(dateText.getText());
-
-      Cars car = new Cars(id, brand, type, year, design, extra, ar, date);
-
-
         saveB.setOnAction(event -> {
-            if (brand.isEmpty() || type.isEmpty() ||  design.isEmpty() || extra.isEmpty() || date.isEqual(null) ) {
+            int id = generateUniqueId();
+            String brand = brandText.getText();
+            String type = typeText.getText();
+            int year = (int) yearText.getValue();
+            String design = designText.getText();
+            String extra = extraText.getText();
+            int ar = (int) arText.getValue();
+            LocalDate date = dateText.getValue();
+
+            Cars car = new Cars(id, brand, type, year, design, extra, ar, date);
+            if (brand.isEmpty() || type.isEmpty() || design.isEmpty() || extra.isEmpty() || date == null) {
                 displayErrorDialog("Kérjük töltse ki az összes mezőt!");
                 return;
             }
@@ -65,7 +57,7 @@ public class AddCarController {
                 CarsDAO.addCar(car);
 
                 System.out.println("Jármű hozzáadva" + brand);
-                app.loadAdmin();
+                AppController.loadAdmin();
             } catch (DatabaseException e) {
                 displayErrorDialog("Hiba a hozzáadás közben " + e.getMessage());
             }

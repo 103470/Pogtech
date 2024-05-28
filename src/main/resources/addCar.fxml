@@ -18,14 +18,23 @@
       <Label layoutX="35.0" layoutY="223.0" text="Évjárat" />
       <TextField fx:id="designText" layoutX="359.0" layoutY="129.0" prefHeight="25.0" prefWidth="190.0" />
       <Label layoutX="359.0" layoutY="104.0" text="Kivitel" />
-      <ChoiceBox fx:id="extraChoice" layoutX="359.0" layoutY="188.0" prefHeight="25.0" prefWidth="190.0" />
       <Label layoutX="361.0" layoutY="164.0" text="Extra" />
       <Label layoutX="361.0" layoutY="223.0" text="Ár" />
       <Button layoutX="407.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="+" />
       <Label layoutX="206.0" layoutY="284.0" text="Időpont(ok)" />
       <Button fx:id="saveB" layoutX="279.0" layoutY="399.0" mnemonicParsing="false" text="Mentés" />
       <DatePicker fx:id="dateText" layoutX="206.0" layoutY="307.0" prefHeight="25.0" prefWidth="190.0" />
-      <Spinner fx:id="arText" layoutX="359.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0" />
-      <Spinner fx:id="yearText" layoutX="35.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0" />
+      <Spinner fx:id="arText" editable="true" layoutX="359.0" layoutY="249.0" max="1000000000" min="0" prefHeight="25.0" prefWidth="190.0">
+         <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="1000000000" min="0" />
+         </valueFactory>
+      </Spinner>
+      <Spinner fx:id="yearText" editable="true" layoutX="35.0" layoutY="249.0" max="1000000000" min="0" prefHeight="25.0" prefWidth="190.0">
+         <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="1000000000" min="0" />
+         </valueFactory>
+      </Spinner>
+
+      <TextField fx:id="extraText" layoutX="359.0" layoutY="188.0" prefHeight="25.0" prefWidth="190.0" />
    </children>
 </AnchorPane>

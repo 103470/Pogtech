@@ -14,7 +14,7 @@ import java.sql.*;
 public class UserDAO {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/dealership";
     private static final String INSERT_INTO_USERS = "INSERT INTO users (id, username, password, email, name, isAdmin) VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_FROM_USERS = "SELECT count(1) FROM users WHERE username = ? AND password = ?";
+    private static final String SELECT_FROM_USERS = "SELECT * FROM users WHERE username = ? AND password = ?";
 
     public static boolean isUsernameTaken(String username) throws DatabaseException {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";

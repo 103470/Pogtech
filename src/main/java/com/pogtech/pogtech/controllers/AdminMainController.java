@@ -20,20 +20,15 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class AdminMainController {
-    private App app;
-
-    public void setApp(App app) {
-        this.app = app;
-    }
 
     @FXML
     private void addCar() {
-        app.loadAddCar();
+        AppController.loadAddCar();
     }
 
     @FXML
     private void registerB() {
-        app.loadRegister();
+        AppController.loadRegister();
     }
 
     private static final Logger logger = Logger.getLogger(MainController.class.getName());
@@ -103,7 +98,7 @@ public class AdminMainController {
 
     @FXML
     private void updateCar(){
-        app.loadUpdateCar();
+        AppController.loadUpdateCar();
     }
 
 }

@@ -58,7 +58,7 @@ public class CurrentUser {
                 ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
-                ", roleId=" + isAdmin +
+                ", isAdmin=" + isAdmin +
                 '}';
     }
 

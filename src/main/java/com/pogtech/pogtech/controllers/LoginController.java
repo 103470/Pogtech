@@ -38,9 +38,9 @@ public class LoginController {
                 CurrentUser currentUser = UserDAO.loginUser(username, password);
                 if (currentUser != null) {
                     if (currentUser.getIsAdmin() == 1) {
-                        app.loadAdmin();
-                    } else if (currentUser.getIsAdmin() == 0) {
-                        app.loadUser();
+                        AppController.loadAdmin();
+                    } else{
+                        AppController.loadUser();
                     }
                 }
                 else {
@@ -59,7 +59,7 @@ public class LoginController {
 
     public void goToRegister(ActionEvent actionEvent) {
         goToRegister.setOnAction(event ->{
-            app.loadRegister();
+            AppController.loadRegister();
         });
     }
 }

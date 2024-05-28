@@ -26,12 +26,12 @@ public class UserMainController {
 
     @FXML
     private void loginB() {
-        app.loadLogin();
+        AppController.loadLogin();
     }
 
     @FXML
     private void registerB() {
-        app.loadRegister();
+        AppController.loadRegister();
     }
 
     private static final Logger logger = Logger.getLogger(MainController.class.getName());

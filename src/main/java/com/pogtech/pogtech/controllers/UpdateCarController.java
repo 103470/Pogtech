@@ -11,19 +11,8 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class UpdateCarController {
-    private AdminMainController ac;
 
-    public void setAdminController(AdminMainController adminMainController) {
-        this.ac = adminMainController;
-    }
-
-    private App app;
-    public void setApp(App app) {
-        this.app = app;
-    }
-
-
-
+    AdminMainController ac;
     @FXML
     public void updateB() {
         Cars selectedCar = ac.tableMain.getSelectionModel().getSelectedItem();

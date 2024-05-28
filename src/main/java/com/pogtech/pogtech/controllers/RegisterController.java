@@ -75,14 +75,14 @@ public class RegisterController {
                 UserDAO.registerUser(newUser);
 
                 System.out.println("Felhasználó regisztrálva: " + username);
-                app.loadLogin();
+                AppController.loadLogin();
             } catch (DatabaseException e) {
                 displayErrorDialog("Hiba a regisztráció közben: " + e.getMessage());
             }
         });
 
         goToLogin.setOnAction(event -> {
-            App.loadLogin();
+            AppController.loadLogin();
         });
     }
 
