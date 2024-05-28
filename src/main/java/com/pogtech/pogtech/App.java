@@ -1,9 +1,6 @@
 package com.pogtech.pogtech;
 
-import com.pogtech.pogtech.controllers.AddCarController;
-import com.pogtech.pogtech.controllers.AdminMainController;
-import com.pogtech.pogtech.controllers.LoginController;
-import com.pogtech.pogtech.controllers.MainController;
+import com.pogtech.pogtech.controllers.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -106,7 +103,7 @@ public class App extends Application {
             Scene scene = new Scene(fxmlLoader.load());
             AddCarController addCarController = fxmlLoader.getController();
             addCarController.setApp(this);
-            //addCarController.initalize();
+            //addCarController.initialize();
 
             Stage stage = new Stage();
             stage.setTitle("Jármű hozzáadása");
@@ -117,6 +114,27 @@ public class App extends Application {
         }
 
     }
+
+    public void loadUpdateCar(){
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/updateCar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            UpdateCarController updateCarController = fxmlLoader.getController();
+            updateCarController.setApp(this);
+            updateCarController.updateB();
+
+            Stage stage = new Stage();
+            stage.setTitle("Jármű hozzáadása");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
 
 
 

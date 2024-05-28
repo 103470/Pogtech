@@ -4,28 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="464.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddCar">
+<AnchorPane prefHeight="464.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.UpdateCarController">
     <children>
         <Label layoutX="188.0" layoutY="31.0" text="Jármű szerkesztése">
             <font>
                 <Font name="Droid Serif Bold Italic" size="24.0" />
             </font>
         </Label>
-        <TextField layoutX="35.0" layoutY="129.0" onAction="#brandText" prefHeight="25.0" prefWidth="190.0" />
-        <TextField layoutX="35.0" layoutY="188.0" onAction="#typeText" prefHeight="25.0" prefWidth="190.0" />
-        <TextField layoutX="35.0" layoutY="246.0" onAction="#yearText" prefHeight="25.0" prefWidth="190.0" />
+        <TextField fx:id="brandText" layoutX="35.0" layoutY="129.0" prefHeight="25.0" prefWidth="190.0" />
+        <TextField fx:id="typeText" layoutX="35.0" layoutY="188.0" prefHeight="25.0" prefWidth="190.0" />
         <Label layoutX="35.0" layoutY="104.0" text="Márka" />
         <Label layoutX="35.0" layoutY="164.0" text="Típus" />
         <Label layoutX="35.0" layoutY="223.0" text="Évjárat" />
-        <TextField layoutX="359.0" layoutY="129.0" onAction="#designText" prefHeight="25.0" prefWidth="190.0" />
+        <TextField fx:id="designText" layoutX="359.0" layoutY="129.0" prefHeight="25.0" prefWidth="190.0" />
         <Label layoutX="359.0" layoutY="104.0" text="Kivitel" />
         <ChoiceBox fx:id="extraChoice" layoutX="359.0" layoutY="188.0" prefHeight="25.0" prefWidth="190.0" />
-        <TextField fx:id="arText" layoutX="359.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0" />
         <Label layoutX="361.0" layoutY="164.0" text="Extra" />
         <Label layoutX="361.0" layoutY="223.0" text="Ár" />
-        <TextField layoutX="206.0" layoutY="307.0" prefHeight="25.0" prefWidth="190.0" />
         <Button layoutX="407.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" text="+" />
         <Label layoutX="206.0" layoutY="284.0" text="Időpont(ok)" />
-        <Button layoutX="279.0" layoutY="399.0" mnemonicParsing="false" text="Mentés" />
+        <Button fx:id="updateB" layoutX="279.0" layoutY="399.0" mnemonicParsing="false" onAction="#updateB" text="Mentés" />
+      <Spinner fx:id="arSpin" layoutX="359.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0" />
+      <Spinner fx:id="yearSpin" layoutX="35.0" layoutY="246.0" prefHeight="25.0" prefWidth="190.0" />
+      <DatePicker fx:id="dateTime" layoutX="199.0" layoutY="307.0" prefHeight="25.0" prefWidth="190.0" />
     </children>
 </AnchorPane>

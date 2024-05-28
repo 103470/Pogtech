@@ -41,7 +41,7 @@ public class AdminMainController {
     private CarsDAO carsDAO = new CarsDAO();
 
     @FXML
-    private TableView<Cars> tableMain;
+    protected TableView<Cars> tableMain;
     @FXML
     private TableColumn<Cars, Integer> id;
     @FXML
@@ -99,6 +99,11 @@ public class AdminMainController {
         } else {
             MessageHandler.showError("Kérjük, válasszon ki egy autót a törléshez.");
         }
+    }
+
+    @FXML
+    private void updateCar(){
+        app.loadUpdateCar();
     }
 
 }

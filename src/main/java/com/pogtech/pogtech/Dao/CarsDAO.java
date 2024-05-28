@@ -6,6 +6,7 @@ import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,10 @@ public class CarsDAO {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/dealership";
     private static final String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
-
     private static final String INSERT_INTO_CARS = "INSERT INTO cars (id, brand, type, year, design, extra, price, rendezvous_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String UPDATE_CARS = "UPDATE cars SET brand = ?, type = ?, year = ?, design = ?, extra = ?, price = ?, rendezvous_date = ? WHERE id = ?";
+    private static final String DELETE_CAR = "DELETE FROM cars WHERE id = ?";
+
 
     public List<Cars> getAllCars() throws DatabaseException {
         List<Cars> cars = new ArrayList<>();
@@ -61,10 +64,26 @@ public class CarsDAO {
         }
     }
 
-    public void deleteCar(int id) throws SQLException {
-        String sql = "DELETE FROM cars WHERE id = ?";
+    public void updateCar(int id, String brand, String type, int year, String design, String extra, int price, LocalDate date) throws SQLException {
         try (Connection connection = DriverManager.getConnection(DB_URL);
-             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CARS)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, brand);
+            preparedStatement.setString(3, type);
+            preparedStatement.setInt(4, year);
+            preparedStatement.setString(5, design);
+            preparedStatement.setString(6, extra);
+            preparedStatement.setInt(7, price);
+            preparedStatement.setDate(8, Date.valueOf(date));
+
+
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    public void deleteCar(int id) throws SQLException {
+        try (Connection connection = DriverManager.getConnection(DB_URL);
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CAR)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         }

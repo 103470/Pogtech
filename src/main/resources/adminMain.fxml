@@ -20,7 +20,7 @@
       <AnchorPane layoutY="-2.0" prefHeight="536.0" prefWidth="208.0">
          <children>
             <Button fx:id="addCar" layoutX="38.0" layoutY="58.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="133.0" text="Jármű hozzáadás" />
-            <Button fx:id="updateCar" layoutX="38.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű szerkesztése" />
+            <Button fx:id="updateCar" layoutX="38.0" layoutY="121.0" mnemonicParsing="false" onAction="#updateCar" prefHeight="25.0" prefWidth="133.0" text="Jármű szerkesztése" />
             <Button fx:id="deleteCar" layoutX="38.0" layoutY="182.0" mnemonicParsing="false" onAction="#deleteCar" prefHeight="25.0" prefWidth="133.0" text="Jármű törlése" />
             <Button layoutX="38.0" layoutY="476.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Kijelentkezés" />
          </children>
