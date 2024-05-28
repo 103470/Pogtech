@@ -29,7 +29,7 @@ public class MainController {
 
     @FXML
     private void loginB() {
-        app.loadLogin();
+        app.loadAdmin();
     }
 
     @FXML

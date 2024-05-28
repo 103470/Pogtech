@@ -1,6 +1,7 @@
 package com.pogtech.pogtech.Dao;
 
 import com.pogtech.pogtech.MessageHandler;
+import com.pogtech.pogtech.data.CurrentUser;
 import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
 import javafx.scene.chart.PieChart;
@@ -48,21 +49,25 @@ public class UserDAO {
         }
     }
 
-    public static boolean loginUser(String usernameText, String passwordText) throws DatabaseException {
+    public static CurrentUser loginUser(String usernameText, String passwordText) throws DatabaseException {
         try (Connection conn = DriverManager.getConnection(DB_URL)){
             PreparedStatement stmt = conn.prepareStatement(SELECT_FROM_USERS);
             stmt.setString(1, usernameText);
             stmt.setString(2, passwordText);
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getInt(1) > 0;
+                    String username = rs.getString("username");
+                    String email = rs.getString("email");
+                    String name = rs.getString("name");
+                    int isAdmin = rs.getInt("isAdmin");
+                    return new CurrentUser(username, email, name, isAdmin);
                 } else {
-                    return false;
+                    return null;
                 }
             }
 
         }catch (SQLException e){
-            throw new DatabaseException("nemjó");
+            throw new DatabaseException("Database error: " + e.getMessage());
         }
     }
 }

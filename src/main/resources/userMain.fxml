@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="531.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.MainController">
+<AnchorPane prefHeight="531.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.UserMainController">
     <children>
         <TableView fx:id="tableMain" layoutX="228.0" prefHeight="531.0" prefWidth="689.0">
             <columns>

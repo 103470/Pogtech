@@ -1,10 +1,12 @@
 package com.pogtech.pogtech;
 
+import com.pogtech.pogtech.controllers.AddCarController;
 import com.pogtech.pogtech.controllers.AdminMainController;
 import com.pogtech.pogtech.controllers.LoginController;
 import com.pogtech.pogtech.controllers.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -75,6 +77,49 @@ public class App extends Application {
         }
 
     }
+
+    public void loadUser()  {
+
+        try {
+
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/userMain.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            MainController mainController = fxmlLoader.getController();
+            mainController.setApp(this);
+            mainController.initalize();
+
+            Stage stage = new Stage();
+            stage.setTitle("Autókereskedés");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
+    public void loadAddCar(){
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/addCar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            AddCarController addCarController = fxmlLoader.getController();
+            addCarController.setApp(this);
+            //addCarController.initalize();
+
+            Stage stage = new Stage();
+            stage.setTitle("Jármű hozzáadása");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+
 
 
 

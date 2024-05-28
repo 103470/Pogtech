@@ -1,8 +1,8 @@
 package com.pogtech.pogtech.controllers;
 
 import com.pogtech.pogtech.App;
-import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.Dao.CarsDAO;
+import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.database.DatabaseException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -17,15 +17,16 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class AdminMainController {
+public class UserMainController {
+
     private App app;
     public void setApp(App app) {
         this.app = app;
     }
 
     @FXML
-    private void addCar() {
-        app.loadAddCar();
+    private void loginB() {
+        app.loadLogin();
     }
 
     @FXML

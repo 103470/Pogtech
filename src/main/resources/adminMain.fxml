@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="524.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pogtech.pogtech.controllers.AdminMainController">
    <children>
-      <TableView layoutX="208.0" layoutY="-1.0" prefHeight="536.0" prefWidth="556.0">
+      <TableView fx:id="tableMain" layoutX="208.0" layoutY="-1.0" prefHeight="536.0" prefWidth="556.0">
         <columns>
           <TableColumn fx:id="id" prefWidth="49.0" text="Id" />
           <TableColumn fx:id="brand" prefWidth="79.0" text="Márka" />
@@ -19,9 +19,9 @@
       </TableView>
       <AnchorPane layoutY="-2.0" prefHeight="536.0" prefWidth="208.0">
          <children>
-            <Button layoutX="38.0" layoutY="58.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű hozzáadás" />
-            <Button layoutX="38.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű szerkesztése" />
-            <Button layoutX="38.0" layoutY="182.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű törlése" />
+            <Button fx:id="addCar" layoutX="38.0" layoutY="58.0" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="133.0" text="Jármű hozzáadás" />
+            <Button fx:id="updateCar" layoutX="38.0" layoutY="121.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű szerkesztése" />
+            <Button fx:id="deleteCar" layoutX="38.0" layoutY="182.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Jármű törlése" />
             <Button layoutX="38.0" layoutY="476.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Kijelentkezés" />
          </children>
       </AnchorPane>
