@@ -1,6 +1,7 @@
 package com.pogtech.pogtech.controllers;
 
 import com.pogtech.pogtech.App;
+import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.Dao.CarsDAO;
 import com.pogtech.pogtech.database.DatabaseException;
@@ -13,12 +14,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
 
 public class AdminMainController {
     private App app;
+
     public void setApp(App app) {
         this.app = app;
     }
@@ -80,4 +83,22 @@ public class AdminMainController {
         }
 
     }
+    @FXML
+    private void deleteCar() {
+        Cars selectedCar = tableMain.getSelectionModel().getSelectedItem();
+        if (selectedCar != null) {
+            CarsDAO carDAO = new CarsDAO();
+            try {
+                carDAO.deleteCar(selectedCar.getId());
+                MessageHandler.showError("Az autó törlésre került.");
+                initalize();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                MessageHandler.showError("Hiba történt az autó törlésekor.");
+            }
+        } else {
+            MessageHandler.showError("Kérjük, válasszon ki egy autót a törléshez.");
+        }
+    }
+
 }

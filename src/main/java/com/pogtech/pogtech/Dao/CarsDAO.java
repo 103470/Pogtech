@@ -60,4 +60,13 @@ public class CarsDAO {
             throw new DatabaseException("Hiba a felhasználó regisztrálásakor: " + e.getMessage());
         }
     }
+
+    public void deleteCar(int id) throws SQLException {
+        String sql = "DELETE FROM cars WHERE id = ?";
+        try (Connection connection = DriverManager.getConnection(DB_URL);
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        }
+    }
 }
