@@ -37,7 +37,7 @@ public class RegisterController {
 
     public void initialize() {
         registerButton.setOnAction(event -> {
-            int id = 1;
+            int id = generateUniqueId();
             String name = nameText.getText();
             String username = usernameText.getText();
             String email = emailText.getText();
@@ -84,6 +84,11 @@ public class RegisterController {
         goToLogin.setOnAction(event -> {
             App.loadLogin();
         });
+    }
+
+    private int generateUniqueId() {
+        // Ez egy egyszerű példányosítás. Lehetőség van egy komplexebb logikára is.
+        return (int) (Math.random() * 1000000);
     }
 
     private boolean isValidEmail(String email) {

@@ -26,7 +26,7 @@
          <font>
             <Font name="Droid Serif Bold Italic" size="12.0" />
          </font></Label>
-      <Button fx:id="loginB" layoutX="66.0" layoutY="177.0" mnemonicParsing="false" text="Bejelentkezés">
+      <Button fx:id="loginB" layoutX="66.0" layoutY="177.0" mnemonicParsing="false" onAction="#loginB" text="Bejelentkezés">
          <font>
             <Font name="Droid Serif Italic" size="12.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="Droid Serif Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="registerB" layoutX="69.0" layoutY="278.0" mnemonicParsing="false" text="Regisztráció">
+      <Button fx:id="registerB" layoutX="69.0" layoutY="278.0" mnemonicParsing="false" onAction="#registerB" text="Regisztráció">
          <font>
             <Font name="Droid Serif Italic" size="12.0" />
          </font>
