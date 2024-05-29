@@ -1,7 +1,7 @@
 package com.pogtech.pogtech;
 
-import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.data.Users;
+import com.pogtech.pogtech.database.DatabaseException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

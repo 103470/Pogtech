@@ -2,7 +2,7 @@ package com.pogtech.pogtech.Dao;
 
 import com.pogtech.pogtech.data.CurrentUser;
 import com.pogtech.pogtech.data.Users;
-import com.pogtech.pogtech.DatabaseException;
+import com.pogtech.pogtech.database.DatabaseException;
 
 import java.sql.*;
 

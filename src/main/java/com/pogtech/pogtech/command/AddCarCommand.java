@@ -4,7 +4,7 @@ import com.pogtech.pogtech.Dao.CarsDAO;
 import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.controllers.AppController;
 import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.DatabaseException;
+import com.pogtech.pogtech.database.DatabaseException;
 
 import java.time.LocalDate;
 

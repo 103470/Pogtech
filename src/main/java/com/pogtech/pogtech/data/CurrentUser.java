@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CurrentUser {
-    private String name;
+    private static String name;
     private String username;
-    private String email;
+    private static String email;
     private int isAdmin;
 
     private static List<CurrentUser> currentUserList = new ArrayList<>();

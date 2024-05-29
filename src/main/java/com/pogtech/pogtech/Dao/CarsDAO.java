@@ -2,7 +2,7 @@ package com.pogtech.pogtech.Dao;
 
 
 import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.DatabaseException;
+import com.pogtech.pogtech.database.DatabaseException;
 
 import java.sql.*;
 import java.time.LocalDate;

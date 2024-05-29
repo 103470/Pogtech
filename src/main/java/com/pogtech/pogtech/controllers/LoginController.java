@@ -4,7 +4,7 @@ import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.data.CurrentUser;
-import com.pogtech.pogtech.DatabaseException;
+import com.pogtech.pogtech.database.DatabaseException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

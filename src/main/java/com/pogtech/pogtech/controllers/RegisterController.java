@@ -1,10 +1,7 @@
 package com.pogtech.pogtech.controllers;
 
-import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.command.RegisterCommand;
-import com.pogtech.pogtech.data.Users;
-import com.pogtech.pogtech.DatabaseException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;

@@ -3,7 +3,7 @@ package com.pogtech.pogtech.controllers;
 import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.Dao.CarsDAO;
 import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.DatabaseException;
+import com.pogtech.pogtech.database.DatabaseException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

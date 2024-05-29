@@ -1,4 +1,4 @@
-package com.pogtech.pogtech;
+package com.pogtech.pogtech.database;
 
 import java.sql.SQLException;
 
