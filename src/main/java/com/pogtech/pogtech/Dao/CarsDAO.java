@@ -2,8 +2,7 @@ package com.pogtech.pogtech.Dao;
 
 
 import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.data.Users;
-import com.pogtech.pogtech.database.DatabaseException;
+import com.pogtech.pogtech.DatabaseException;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -12,11 +11,11 @@ import java.util.List;
 
 public class CarsDAO {
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/dealership";
-    private static final String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
-    private static final String INSERT_INTO_CARS = "INSERT INTO cars (id, brand, type, year, design, extra, price, rendezvous_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String UPDATE_CARS = "UPDATE cars SET brand = ?, type = ?, year = ?, design = ?, extra = ?, price = ?, rendezvous_date = ? WHERE id = ?";
-    private static final String DELETE_CAR = "DELETE FROM cars WHERE id = ?";
+   public static  String DB_URL = "jdbc:mysql://localhost:3306/dealership";
+   public static  String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
+    public static  String INSERT_INTO_CARS = "INSERT INTO cars (id, brand, type, year, design, extra, price, rendezvous_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    public static  String UPDATE_CARS = "UPDATE cars SET brand = ?, type = ?, year = ?, design = ?, extra = ?, price = ?, rendezvous_date = ? WHERE id = ?";
+    public static  String DELETE_CAR = "DELETE FROM cars WHERE id = ?";
 
 
     public List<Cars> getAllCars() throws DatabaseException {

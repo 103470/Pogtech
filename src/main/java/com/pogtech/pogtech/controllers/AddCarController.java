@@ -1,20 +1,9 @@
 package com.pogtech.pogtech.controllers;
 
-import com.pogtech.pogtech.App;
-
-import com.pogtech.pogtech.Dao.CarsDAO;
-import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.command.AddCarCommand;
-import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.data.Users;
-import com.pogtech.pogtech.database.DatabaseException;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 
 public class AddCarController {
 
@@ -62,6 +51,8 @@ public class AddCarController {
     private void displayErrorDialog(String message) {
         MessageHandler.showError(message);
     }
+
+
 
 
 }

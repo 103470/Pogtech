@@ -3,7 +3,7 @@ package com.pogtech.pogtech.controllers;
 import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.Dao.CarsDAO;
 import com.pogtech.pogtech.data.Cars;
-import com.pogtech.pogtech.database.DatabaseException;
+import com.pogtech.pogtech.DatabaseException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -26,26 +26,26 @@ public class UserMainController {
 
     private static final Logger logger = Logger.getLogger(MainController.class.getName());
 
-    private CarsDAO carsDAO = new CarsDAO();
+    public CarsDAO carsDAO = new CarsDAO();
 
     @FXML
-    private TableView<Cars> tableMain;
+    public TableView<Cars> tableMain;
     @FXML
-    private TableColumn<Cars, Integer> id;
+    public TableColumn<Cars, Integer> id;
     @FXML
-    private TableColumn<Cars, String> brand;
+    public TableColumn<Cars, String> brand;
     @FXML
-    private TableColumn<Cars, String> type;
+    public TableColumn<Cars, String> type;
     @FXML
-    private TableColumn<Cars, Integer> year;
+    public TableColumn<Cars, Integer> year;
     @FXML
-    private TableColumn<Cars, String> design;
+    public TableColumn<Cars, String> design;
     @FXML
-    private TableColumn<Cars, String> extra;
+    public TableColumn<Cars, String> extra;
     @FXML
-    private TableColumn<Cars, Integer> price;
+    public TableColumn<Cars, Integer> price;
     @FXML
-    private TableColumn<Cars, LocalDate> rendezvousDate;
+    public TableColumn<Cars, LocalDate> rendezvousDate;
     @FXML
     public void initialize(){
         try{

@@ -1,11 +1,8 @@
 package com.pogtech.pogtech.Dao;
 
-import com.pogtech.pogtech.MessageHandler;
 import com.pogtech.pogtech.data.CurrentUser;
 import com.pogtech.pogtech.data.Users;
-import com.pogtech.pogtech.database.DatabaseException;
-import javafx.scene.chart.PieChart;
-import javafx.fxml.FXML;
+import com.pogtech.pogtech.DatabaseException;
 
 import java.sql.*;
 
