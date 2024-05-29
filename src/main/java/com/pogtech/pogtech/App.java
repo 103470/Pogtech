@@ -10,7 +10,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class App extends Application {
+    private static final Logger log = LogManager.getLogger(App.class);
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/main.fxml"));
@@ -23,7 +26,7 @@ public class App extends Application {
         stage.setTitle("Autókereskedés");
         stage.setScene(scene);
         stage.show();
-
+        log.info("A Main ablak betöltött");
     }
 
 

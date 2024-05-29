@@ -48,7 +48,7 @@ public class AddCarCommand implements Command{
     }
 
     private int generateUniqueId() {
-        // Ez egy egyszerű példányosítás. Lehetőség van egy komplexebb logikára is.
+
         return (int) (Math.random() * 1000000);
     }
 

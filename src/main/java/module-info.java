@@ -3,7 +3,7 @@ module com.pogtech.pogtech {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.sql;
-
+    requires org.apache.logging.log4j;
 
 
     opens com.pogtech.pogtech to javafx.fxml;
