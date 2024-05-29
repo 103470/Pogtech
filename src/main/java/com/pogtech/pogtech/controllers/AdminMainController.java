@@ -53,6 +53,7 @@ public class AdminMainController {
     private TableColumn<Cars, Integer> price;
     @FXML
     private TableColumn<Cars, LocalDate> rendezvousDate;
+
     @FXML
     public void initalize(){
         try{

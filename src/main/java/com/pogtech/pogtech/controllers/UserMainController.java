@@ -24,16 +24,6 @@ public class UserMainController {
         this.app = app;
     }
 
-    @FXML
-    private void loginB() {
-        AppController.loadLogin();
-    }
-
-    @FXML
-    private void registerB() {
-        AppController.loadRegister();
-    }
-
     private static final Logger logger = Logger.getLogger(MainController.class.getName());
 
     private CarsDAO carsDAO = new CarsDAO();
@@ -57,7 +47,7 @@ public class UserMainController {
     @FXML
     private TableColumn<Cars, LocalDate> rendezvousDate;
     @FXML
-    public void initalize(){
+    public void initialize(){
         try{
             List<Cars> cars = carsDAO.getAllCars();
 

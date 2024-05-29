@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 public class UpdateCarController {
 
-    AdminMainController ac;
+    AdminMainController ac = new AdminMainController();
     @FXML
     public void updateB() {
         Cars selectedCar = ac.tableMain.getSelectionModel().getSelectedItem();

@@ -62,8 +62,8 @@ public class AppController extends App {
 
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/userMain.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
-            MainController mainController = fxmlLoader.getController();
-            mainController.initalize();
+            UserMainController userMainControllermain = fxmlLoader.getController();
+            userMainControllermain.initialize();
 
             Stage stage = new Stage();
             stage.setTitle("Autókereskedés");
@@ -82,7 +82,7 @@ public class AppController extends App {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/addCar.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             AddCarController addCarController = fxmlLoader.getController();
-            //addCarController.initialize();
+            addCarController.initialize();
 
             Stage stage = new Stage();
             stage.setTitle("Jármű hozzáadása");
