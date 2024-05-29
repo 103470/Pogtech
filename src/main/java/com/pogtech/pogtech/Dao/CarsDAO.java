@@ -11,8 +11,8 @@ import java.util.List;
 
 public class CarsDAO {
 
-   public static  String DB_URL = "jdbc:mysql://localhost:3306/dealership";
-   public static  String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
+    public static  String DB_URL = "jdbc:mysql://localhost:3306/dealership";
+    public static  String SELECT_ALL_CARS_QUERY = "SELECT id, brand, type, year, design, extra, price, rendezvous_date FROM cars";
     public static  String INSERT_INTO_CARS = "INSERT INTO cars (id, brand, type, year, design, extra, price, rendezvous_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     public static  String UPDATE_CARS = "UPDATE cars SET brand = ?, type = ?, year = ?, design = ?, extra = ?, price = ?, rendezvous_date = ? WHERE id = ?";
     public static  String DELETE_CAR = "DELETE FROM cars WHERE id = ?";
