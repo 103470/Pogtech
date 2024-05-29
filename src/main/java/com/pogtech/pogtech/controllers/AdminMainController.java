@@ -73,6 +73,7 @@ public class AdminMainController {
             });
 
             tableMain.setItems((observableCars));
+            UpdateCarController updateCarController = new UpdateCarController(tableMain.getSelectionModel().getSelectedItem());
 
         } catch (DatabaseException e) {
             throw new RuntimeException(e);

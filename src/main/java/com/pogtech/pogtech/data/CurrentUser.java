@@ -20,7 +20,7 @@ public class CurrentUser {
     }
 
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -36,7 +36,7 @@ public class CurrentUser {
         this.username = username;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 

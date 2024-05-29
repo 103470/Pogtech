@@ -18,7 +18,7 @@
                 <TableColumn fx:id="rendezvousDate" prefWidth="79.0" text="Ídőpont(ok)" />
             </columns>
         </TableView>
-      <Button layoutX="68.0" layoutY="203.0" mnemonicParsing="false" text="Időpont foglalás" textAlignment="CENTER">
+      <Button fx:id="time" layoutX="68.0" layoutY="203.0" mnemonicParsing="false" onAction="#timeB" text="Időpont foglalás" textAlignment="CENTER">
          <font>
             <Font name="Droid Serif Italic" size="12.0" />
          </font>

@@ -71,4 +71,9 @@ public class UserMainController {
         }
 
     }
+
+    public void timeB(){
+        //rendezvousDate = tableMain.getSelectionModel().getSelectedItem();
+
+    }
 }

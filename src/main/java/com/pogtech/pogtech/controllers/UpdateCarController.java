@@ -12,12 +12,19 @@ import java.time.LocalDate;
 
 public class UpdateCarController {
 
+
     AdminMainController ac = new AdminMainController();
+    Cars selectedItem;
+
+    public UpdateCarController(Cars selectedItem) {
+        this.selectedItem = selectedItem;
+    }
+
     @FXML
     public void updateB() {
-        Cars selectedCar = ac.tableMain.getSelectionModel().getSelectedItem();
+        Cars selectedCar = selectedItem;
         if (selectedCar == null) {
-            MessageHandler.showError("Az autó frissítése sikerült.");
+            MessageHandler.showError("Az autó frissítése nemsikerült.");
             return;
         }
 

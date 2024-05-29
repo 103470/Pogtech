@@ -3,6 +3,7 @@ package com.pogtech.pogtech.controllers;
 import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.Dao.UserDAO;
 import com.pogtech.pogtech.MessageHandler;
+import com.pogtech.pogtech.command.RegisterCommand;
 import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
 import javafx.fxml.FXML;
@@ -12,13 +13,6 @@ import javafx.scene.control.TextField;
 
 public class RegisterController {
 
-
-
-    private App app;
-    public void setApp(App app) {
-        this.app = app;
-
-    }
 
     @FXML
     private TextField nameText;
@@ -37,48 +31,19 @@ public class RegisterController {
 
     public void initialize() {
         registerButton.setOnAction(event -> {
-            int id = generateUniqueId();
-            String name = nameText.getText();
-            String username = usernameText.getText();
-            String email = emailText.getText();
-            String password = passwordText.getText();
-            String passwordAgain = cpasswordText.getText();
-            int isAdmin = 0;
+            RegisterCommand command = new RegisterCommand(
+            nameText.getText(),
+            usernameText.getText(),
+            emailText.getText(),
+            passwordText.getText(),
+            cpasswordText.getText()
+            );
 
-            if (name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()) {
-                displayErrorDialog("Kérjük töltse ki az összes mezőt!");
-                return;
-            }
 
-            if (!isValidEmail(email)) {
-                displayErrorDialog("Érvénytelen email cím.");
-                return;
-            }
+            command.execute();
 
-            if (password.length() < 5) {
-                displayErrorDialog("A jelszó túl rövid!");
-                return;
-            }
-
-            if (!password.equals(passwordAgain)) {
-                displayErrorDialog("A jelszavak nem egyeznek");
-                return;
-            }
-
-            try {
-                if (UserDAO.isUsernameTaken(username)) {
-                    displayErrorDialog("A felhasználónév foglalt");
-                    return;
-                }
-
-                Users newUser = new Users(id, name, username, email, password, isAdmin);
-                UserDAO.registerUser(newUser);
-
-                System.out.println("Felhasználó regisztrálva: " + username);
-                AppController.loadLogin();
-            } catch (DatabaseException e) {
-                displayErrorDialog("Hiba a regisztráció közben: " + e.getMessage());
-            }
+            System.out.println("Felhasználó regisztrálva: " + nameText.getText());
+            AppController.loadLogin();
         });
 
         goToLogin.setOnAction(event -> {
