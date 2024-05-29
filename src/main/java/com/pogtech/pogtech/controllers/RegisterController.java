@@ -10,10 +10,6 @@ import javafx.scene.control.TextField;
 public class RegisterController {
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2c5e5a3b7147f4f98ff147a372525b9a967add60
     @FXML
     private TextField nameText;
     @FXML
