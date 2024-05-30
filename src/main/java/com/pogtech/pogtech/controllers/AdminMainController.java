@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -33,6 +34,8 @@ public class AdminMainController {
     private static final Logger logger = Logger.getLogger(MainController.class.getName());
 
     private CarsDAO carsDAO = new CarsDAO();
+    private Button updateCar;
+    private Cars selectedItem;
 
     @FXML
     protected TableView<Cars> tableMain;
@@ -72,7 +75,24 @@ public class AdminMainController {
             });
 
             tableMain.setItems((observableCars));
-            UpdateCarController updateCarController = new UpdateCarController(tableMain.getSelectionModel().getSelectedItem());
+            /*tableMain.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+                if (newSelection != null) {
+                    updateCar.setDisable(false);
+                } else {
+                    updateCar.setDisable(true);
+                }
+            });
+
+            updateCar.setOnAction(event -> {
+                selectedItem = tableMain.getSelectionModel().getSelectedItem();
+                if (selectedItem != null) {
+                    updateCar();
+                } else {
+                    MessageHandler.showError("Please select an item to update.");
+                }
+            });
+             */
+
 
         } catch (DatabaseException e) {
             throw new RuntimeException(e);
