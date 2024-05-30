@@ -1,8 +1,11 @@
 package com.pogtech.pogtech.Dao;
 
+import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.data.CurrentUser;
 import com.pogtech.pogtech.data.Users;
 import com.pogtech.pogtech.database.DatabaseException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 
@@ -12,6 +15,7 @@ public class UserDAO {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/dealership";
     private static final String INSERT_INTO_USERS = "INSERT INTO users (id, username, password, email, name, isAdmin) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_FROM_USERS = "SELECT * FROM users WHERE username = ? AND password = ?";
+    private static final Logger log = LogManager.getLogger(App.class);
 
     public static boolean isUsernameTaken(String username) throws DatabaseException {
         String query = "SELECT COUNT(*) FROM users WHERE username = ?";
@@ -44,6 +48,7 @@ public class UserDAO {
         } catch (SQLException e) {
             throw new DatabaseException("Hiba a felhasználó regisztrálásakor: " + e.getMessage());
         }
+        log.info("Egy felhasználó regisztrált");
     }
 
     public static CurrentUser loginUser(String usernameText, String passwordText) throws DatabaseException {
@@ -57,14 +62,18 @@ public class UserDAO {
                     String email = rs.getString("email");
                     String name = rs.getString("name");
                     int isAdmin = rs.getInt("isAdmin");
+                    log.info("Egy felhasználó bejelentkezett");
                     return new CurrentUser(username, email, name, isAdmin);
                 } else {
                     return null;
                 }
             }
 
+
+
         }catch (SQLException e){
             throw new DatabaseException("Database error: " + e.getMessage());
         }
+
     }
 }

@@ -1,8 +1,11 @@
 package com.pogtech.pogtech.Dao;
 
 
+import com.pogtech.pogtech.App;
 import com.pogtech.pogtech.data.Cars;
 import com.pogtech.pogtech.database.DatabaseException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -16,6 +19,7 @@ public class CarsDAO {
     public static  String INSERT_INTO_CARS = "INSERT INTO cars (id, brand, type, year, design, extra, price, rendezvous_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     public static  String UPDATE_CARS = "UPDATE cars SET brand = ?, type = ?, year = ?, design = ?, extra = ?, price = ?, rendezvous_date = ? WHERE id = ?";
     public static  String DELETE_CAR = "DELETE FROM cars WHERE id = ?";
+    private static final Logger log = LogManager.getLogger(App.class);
 
 
     public List<Cars> getAllCars() throws DatabaseException {
@@ -43,6 +47,7 @@ public class CarsDAO {
         } catch (SQLException e) {
             throw new DatabaseException("Hiba az adatbázisműveletek közben: " + e.getMessage(), e);
         }
+        log.info("A Cars Tábla adatbázisból való betöltése befejeződött");
         return cars;
     }
 
@@ -61,6 +66,7 @@ public class CarsDAO {
         } catch (SQLException e) {
             throw new DatabaseException("Hiba a felhasználó regisztrálásakor: " + e.getMessage());
         }
+        log.info("A Cars Tábl új adat került");
     }
 
     public void updateCar(int id, String brand, String type, int year, String design, String extra, int price, LocalDate date) throws SQLException {
@@ -77,6 +83,7 @@ public class CarsDAO {
 
 
             preparedStatement.executeUpdate();
+            log.info("A Cars Táblában egy adatMódosításra került");
         }
     }
 
@@ -85,6 +92,7 @@ public class CarsDAO {
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_CAR)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
+            log.info("A Cars Táblából egy adat törlődött");
         }
     }
 }
